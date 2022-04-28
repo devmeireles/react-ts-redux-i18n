@@ -10,6 +10,7 @@ import { connect, ConnectedProps } from "react-redux";
 
 import { mapStateToProps } from "./store";
 import Navigation from './components/organisms/Navigation';
+import { dark, light } from './defaults/themes'
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({})
 
@@ -18,11 +19,10 @@ const connector = connect(mapStateToProps, mapDispatchToProps);
 type Props = & ConnectedProps<typeof connector>
 
 const App: React.FC<Props> = ({ children, app }) => {
+  const choosePallet = app.theme === 'dark' ? dark : light;
 
   const theme = createTheme({
-    palette: {
-      mode: app.theme
-    },
+    palette: { ...choosePallet }
   })
 
   return (

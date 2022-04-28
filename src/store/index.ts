@@ -10,9 +10,9 @@ const rootReducer = combineReducers({
 });
 
 export const mapStateToProps = (state: IRootState): AppType => ({
+    league: state.league,
+    club: state.club,
     profile: state.profile,
-    party: state.party,
-    company: state.company,
     app: state.app
 });
 

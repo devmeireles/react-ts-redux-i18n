@@ -3,7 +3,8 @@ import {
     Routes as Router,
     Route
 } from "react-router-dom";
-import Profile from "../views/Profile";
+
+import { Club, Home, League, NoMatch } from "../views";
 import { RoutesEnum } from "./routesEnum";
 
 type Props = {
@@ -13,23 +14,30 @@ const Routes: React.FC<Props> = (): JSX.Element => {
     return (
         <Router>
             <Route
-                path={RoutesEnum.PROFILE}
+                path={RoutesEnum.HOME}
                 element={
-                    <Profile />
+                    <Home />
                 }
             />
 
             <Route
-                path={RoutesEnum.COMPANY}
+                path={RoutesEnum.LEAGUE}
                 element={
-                    <Profile />
+                    <League />
                 }
             />
 
             <Route
-                path={RoutesEnum.PARTY}
+                path={RoutesEnum.CLUB}
                 element={
-                    <Profile />
+                    <Club />
+                }
+            />
+
+            <Route
+                path='*'
+                element={
+                    <NoMatch />
                 }
             />
         </Router>

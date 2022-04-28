@@ -1,18 +1,18 @@
-import { InitialCompanyState } from "./Company";
-import { InitialPartyState } from "./Party";
+import { InitialLeagueState } from "./League";
+import { InitialClubState } from "./Club";
 import { InitialProfileState } from "./Profile";
 import {InitialAppState} from "./App";
 
 export interface IRootState {
+    league: any,
+    club: any,
     profile: any,
-    party: any,
-    company: any,
     app: any,
 }
 
 export type AppType = {
+    league: InitialLeagueState;
+    club: InitialClubState;
     profile: InitialProfileState;
-    party: InitialPartyState;
-    company: InitialCompanyState;
     app: InitialAppState;
 }

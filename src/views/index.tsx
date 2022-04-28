@@ -1,0 +1,5 @@
+export { default as Home } from './Home'
+export { default as League } from './League'
+export { default as Club } from './Club'
+export { default as Profile } from './Profile'
+export { default as NoMatch } from './NoMatch'

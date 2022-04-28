@@ -5,6 +5,7 @@ import { InitialAppState } from "../types/App";
 export enum AppActionTypes {
     SET_LANGUAGE = "SET_LANGUAGE",
     SET_THEME = "SET_THEME",
+    SET_LOADING = "SET_LOADING"
 }
 
 export const setTheme = (payload: string) => {
@@ -24,5 +25,14 @@ export const setLanguage = (payload: string) => {
         })
 
         i18n.changeLanguage(payload)
+    }
+}
+
+export const setLoading = (payload: boolean) => {
+    return async (dispatch: Dispatch) => {
+        dispatch({
+            type: AppActionTypes.SET_LOADING,
+            payload
+        })
     }
 }

@@ -2,8 +2,9 @@ import { AppActionTypes } from "../actions/app";
 import { InitialAppState } from "../types/App"
 
 const initialAppState: InitialAppState = {
-    theme: 'light',
-    language: 'pt',
+    theme: 'dark',
+    language: 'en',
+    loading: false
 }
 
 export const appReducer = (state = initialAppState, action: { type: any, payload: any }) => {
@@ -18,6 +19,12 @@ export const appReducer = (state = initialAppState, action: { type: any, payload
             state = {
                 ...state,
                 language: action.payload
+            }
+            break;
+        case AppActionTypes.SET_LOADING:
+            state = {
+                ...state,
+                loading: action.payload
             }
             break;
     }
